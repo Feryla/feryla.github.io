@@ -1,0 +1,7 @@
+name: 'Feryla'
+description: 'I like people, places, and things.'
+url: 'http://www.feryla.net'
+
+markdown: redcarpet
+pygments: true
+permalink: /:title/
