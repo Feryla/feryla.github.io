@@ -1,4 +1,106 @@
-code {
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+font-family: 'Source Sans Pro', sans-serif;}
+
+$primaryColor: #43A047;
+
+body {
+	color: #4d4d4d;
+	background-color: #fff;
+	max-width: 700px;
+	margin: 0 auto;
 	padding: 12px;
-	background-color: #ccc;
+	padding-bottom: 0;
+}
+
+h1 {
+	font-size:22pt;
+	margin: 0px;
+	color: #43A047;
+}
+
+a {
+	text-decoration:none;
+	color: #43A047;
+}
+
+
+pre {
+	overflow-x: auto;
+	padding: 12px;
+	background-color: #f0f0f0;
+	border-radius: 3px;
+	max-width: 100%;
+}
+
+.header {
+	text-align: center;
+}
+
+.header--tagline {
+	font-size: 1.5rem;
+	line-height: 1;
+	color: #aaa;
+	display:none;
+}
+
+.header>ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.header>ul>li {
+	padding: 0px;
+	margin:0px;
+}
+
+
+.post {
+	line-height:1.45;
+	font-size: 13pt;
+	
+	h1 {
+		line-height:1;
+	}
+}
+
+.post--date {
+color: #aaa;
+margin-bottom: 24px;
+	line-height: 1;
+}
+
+.posts--list {
+	list-style:none;
+	
+	li a {
+		display:block;
+		padding:12px;
+		line-height: 1;
+	}
+	
+	li a:hover {
+		background-color: lighten($primaryColor, 48);
+	};
+	
+	li:first-child {
+		border-top: 1px solid #aaa;
+	};
+	
+	li {
+		border-bottom: 1px solid #aaa;
+	};
+
+
+}
+
+.posts--title { 
+	@extend h1;
+}
+
+.posts--date {
+	color: #aaa !important;
+	font-size: 11pt;
 }

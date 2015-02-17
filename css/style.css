@@ -1,65 +1,76 @@
 html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
-    /* Set your content font stack here: */
-font-family: 'Source Sans Pro', sans-serif;}
+.pure-g [class*="pure-u"] {
+  /* Set your content font stack here: */
+  font-family: 'Source Sans Pro', sans-serif; }
 
 body {
-	color: #4d4d4d;
-	background-color: #fff;
-	max-width: 700px;
-	margin: 0 auto;
-	padding: 12px;
-	padding-bottom: 0;
-}
+  color: #4d4d4d;
+  background-color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 12px;
+  padding-bottom: 0; }
 
-h1 {
-	font-size:20pt;
-	margin: 0px;
-	color: #43A047;
-}
+h1, .posts--title {
+  font-size: 22pt;
+  margin: 0px;
+  color: #43A047; }
 
 a {
-	text-decoration:none;
-	color: #43A047;
-}
-
+  text-decoration: none;
+  color: #43A047; }
 
 pre {
-	overflow-x: auto;
-	padding: 12px;
-	background-color: #f0f0f0;
-	border-radius: 3px;
-	max-width: 100%;
-}
+  overflow-x: auto;
+  padding: 12px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  max-width: 100%; }
 
 .header {
-	text-align: center;
-}
+  text-align: center; }
 
 .header--tagline {
-	font-size: 1.5rem;
-	line-height: 1;
-	color: #aaa;
-}
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #aaa;
+  display: none; }
 
-.header>ul {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
+.header > ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px; }
 
-.header>ul>li {
-	padding: 0px;
-	margin:0px;
-}
-
+.header > ul > li {
+  padding: 0px;
+  margin: 0px; }
 
 .post {
-	line-height:1.45;
-	font-size: 12pt;
-}
+  line-height: 1.45;
+  font-size: 13pt; }
+  .post h1, .post .posts--title {
+    line-height: 1; }
 
 .post--date {
-color: #aaa;
-margin-bottom: 24px;
-}
+  color: #aaa;
+  margin-bottom: 24px;
+  line-height: 1; }
+
+.posts--list {
+  list-style: none; }
+  .posts--list li a {
+    display: block;
+    padding: 12px;
+    line-height: 1; }
+  .posts--list li a:hover {
+    background-color: #e4f4e5; }
+  .posts--list li:first-child {
+    border-top: 1px solid #aaa; }
+  .posts--list li {
+    border-bottom: 1px solid #aaa; }
+
+.posts--date {
+  color: #aaa !important;
+  font-size: 11pt; }
+
+/*# sourceMappingURL=style.css.map */
