@@ -1,7 +1,7 @@
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
-    /* Set your content font stack here: */
-font-family: 'Source Sans Pro', sans-serif;}
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+html, button, input, select, textarea {
+font-family: 'Source Sans Pro', sans-serif;
+}
 
 $primaryColor: #43A047;
 
@@ -60,7 +60,7 @@ pre {
 .post {
 	line-height:1.45;
 	font-size: 13pt;
-	
+
 	h1 {
 		line-height:1;
 	}
@@ -74,21 +74,21 @@ margin-bottom: 24px;
 
 .posts--list {
 	list-style:none;
-	
+
 	li a {
 		display:block;
 		padding:12px;
 		line-height: 1;
 	}
-	
+
 	li a:hover {
 		background-color: lighten($primaryColor, 48);
 	};
-	
+
 	li:first-child {
 		border-top: 1px solid #aaa;
 	};
-	
+
 	li {
 		border-bottom: 1px solid #aaa;
 	};
@@ -96,7 +96,7 @@ margin-bottom: 24px;
 
 }
 
-.posts--title { 
+.posts--title {
 	@extend h1;
 }
 
