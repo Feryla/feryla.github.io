@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style media="screen">
+    body {
+      color: #4d4d4d;
+      background-color: #fff;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 12px;
+      padding-bottom: 0;
+    }
+
+    h1 {
+      font-size:22pt;
+      margin: 0px;
+      color: #43A047;
+    }
+
+    a {
+      text-decoration:none;
+      color: #43A047;
+    }
+    </style>
     {% if page.home %}
       <title>Feryla</title>
     {% else %}
@@ -8,7 +29,17 @@
     {% endif %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/all.min.css" rel="stylesheet" type="text/css" />
+    <script>
+      var cb = function() {
+        var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = '/css/all.min.css';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(cb);
+      else window.addEventListener('load', cb);
+    </script>
   </head>
   <body>
 	  {% include header.html %}
