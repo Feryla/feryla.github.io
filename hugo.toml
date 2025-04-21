@@ -33,3 +33,7 @@ title = 'Feryla'
   intro = "Feryla"
   name = "Feryla"
   description = "I like people, places, and things."
+
+  # Allow to override webmanifest options
+[params.webmanifest]
+  start_url = "/" # will use homepage url by default
