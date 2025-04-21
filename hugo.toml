@@ -1,0 +1,35 @@
+baseURL = 'https://feryla.net/'
+languageCode = 'en-us'
+title = 'Feryla'
+[module]
+  [[module.imports]]
+    path = "github.com/hugo-sid/hugo-blog-awesome"
+
+[menu]
+  [[menu.main]]
+    # The page reference (pageRef) is useful for menu highlighting
+    # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    pageRef="posts"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    pageRef="about"
+    name = 'About'
+    url = '/about/'
+    weight = 30
+
+[params]
+  mainSections = ['posts']
+
+[params.author]
+  avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "Feryla"
+  name = "Feryla"
+  description = "I like people, places, and things."
