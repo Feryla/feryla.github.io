@@ -25,6 +25,8 @@ title = 'Feryla'
     weight = 30
 
 [params]
+  siteName = "Feryla"
+  description = "Feryla's blog"
   mainSections = ['posts']
 
 [params.author]
