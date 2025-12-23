@@ -39,3 +39,11 @@ title = 'Feryla'
   # Allow to override webmanifest options
 [params.webmanifest]
   start_url = "/" # will use homepage url by default
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/Feryla"
+
+[[params.socialIcons]]
+name = "bluesky"
+url = "https://bsky.app/profile/feryla.net"
