@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Author from "../components/Author.astro";
+import PostItem from "../components/PostItem.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<BaseLayout title="Feryla">
+  <Author />
+  <main aria-label="Content">
+    <h3 class="posts-item-note" aria-label="Recent Posts"></h3>
+    {
+      posts.map((post) => (
+        <PostItem
+          title={post.data.title}
+          date={post.data.date}
+          slug={post.id}
+        />
+      ))
+    }
+  </main>
+</BaseLayout>

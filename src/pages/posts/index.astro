@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostItem from "../../components/PostItem.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<BaseLayout title="Posts" wrapperClass="list-page">
+  <header class="header">
+    <h1 class="header-title center">Posts</h1>
+  </header>
+  <main class="page-content" aria-label="Content">
+    {
+      posts.map((post) => (
+        <PostItem
+          title={post.data.title}
+          date={post.data.date}
+          slug={post.id}
+        />
+      ))
+    }
+  </main>
+</BaseLayout>

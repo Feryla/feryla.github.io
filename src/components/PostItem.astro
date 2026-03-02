@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  slug: string;
+}
+
+const { title, date, slug } = Astro.props;
+
+const formatted = date.toLocaleDateString("en-GB", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+});
+---
+
+<article class="post-item">
+  <h4 class="post-item-title">
+    <a href={`/posts/${slug}/`}>{title}</a>
+  </h4>
+  <time class="post-item-meta" datetime={date.toISOString()}>
+    {formatted}
+  </time>
+</article>

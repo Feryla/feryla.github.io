@@ -1,18 +1,13 @@
-# Hugo default output directory
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
+# Astro
+dist/
+.astro/
 
-# Hugo cache
-.hugo_build.lock
+# Node
+node_modules/
 
 # Temporary files
 .DS_Store
 Thumbs.db
-
-# Node modules if using npm packages
-node_modules/
 
 # Environment variables
 .env

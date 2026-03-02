@@ -1,0 +1,254 @@
+---
+const pathname = Astro.url.pathname;
+---
+
+<div class="navbar" role="navigation">
+  <nav class="menu" aria-label="Main Navigation">
+    <a href="/" class="logo">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="25"
+        height="25"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentcolor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-home"
+      >
+        <title></title>
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </a>
+    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+    <label for="menu-trigger">
+      <span class="menu-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          stroke="currentcolor"
+          fill="none"
+          viewBox="0 0 14 14"
+        >
+          <title>Menu</title>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.595 7H3.40726"></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5096 3.51488H3.49301"></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5096 10.4851H3.49301"></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <div class="trigger">
+      <ul class="trigger-container">
+        <li>
+          <a class:list={["menu-link", { active: pathname === "/" }]} href="/"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class:list={[
+              "menu-link",
+              { active: pathname.startsWith("/posts") },
+            ]}
+            href="/posts/">Posts</a
+          >
+        </li>
+        <li>
+          <a
+            class:list={[
+              "menu-link",
+              { active: pathname.startsWith("/about") },
+            ]}
+            href="/about/">About</a
+          >
+        </li>
+        <li class="menu-separator"><span>|</span></li>
+      </ul>
+      <a id="mode" href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="mode-sunny"
+          width="21"
+          height="21"
+          viewBox="0 0 14 14"
+          stroke-width="1"
+        >
+          <title>LIGHT</title>
+          <g>
+            <circle
+              cx="7"
+              cy="7"
+              r="2.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></circle>
+            <line
+              x1="7"
+              y1=".5"
+              x2="7"
+              y2="2.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="2.4"
+              y1="2.4"
+              x2="3.82"
+              y2="3.82"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1=".5"
+              y1="7"
+              x2="2.5"
+              y2="7"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="2.4"
+              y1="11.6"
+              x2="3.82"
+              y2="10.18"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="7"
+              y1="13.5"
+              x2="7"
+              y2="11.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="11.6"
+              y1="11.6"
+              x2="10.18"
+              y2="10.18"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="13.5"
+              y1="7"
+              x2="11.5"
+              y2="7"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="11.6"
+              y1="2.4"
+              x2="10.18"
+              y2="3.82"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+          </g>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="mode-moon"
+          width="21"
+          height="21"
+          viewBox="0 0 14 14"
+          stroke-width="1"
+        >
+          <title>DARK</title>
+          <g>
+            <circle
+              cx="7"
+              cy="7"
+              r="2.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></circle>
+            <line
+              x1="7"
+              y1=".5"
+              x2="7"
+              y2="2.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="2.4"
+              y1="2.4"
+              x2="3.82"
+              y2="3.82"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1=".5"
+              y1="7"
+              x2="2.5"
+              y2="7"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="2.4"
+              y1="11.6"
+              x2="3.82"
+              y2="10.18"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="7"
+              y1="13.5"
+              x2="7"
+              y2="11.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="11.6"
+              y1="11.6"
+              x2="10.18"
+              y2="10.18"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="13.5"
+              y1="7"
+              x2="11.5"
+              y2="7"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+            <line
+              x1="11.6"
+              y1="2.4"
+              x2="10.18"
+              y2="3.82"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"></line>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,95 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  wrapperClass?: string;
+}
+
+const { title, description = "Feryla's blog", wrapperClass } = Astro.props;
+const fullTitle = title === "Feryla" ? "Feryla | Feryla" : `${title} | Feryla`;
+---
+
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title itemprop="name">{fullTitle}</title>
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    <meta property="og:title" content={fullTitle} />
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Feryla" />
+    <meta property="og:type" content="website" />
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        let theme;
+        if (stored) {
+          theme = stored;
+        } else {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+          document.documentElement.classList.remove("light");
+        } else {
+          document.documentElement.classList.remove("dark");
+          document.documentElement.classList.add("light");
+        }
+      })();
+    </script>
+    <script
+      defer
+      src="https://umami.lysdexia.net/script.js"
+      data-website-id="ba25a409-8f65-4c32-b001-ef13dbadc1c7"></script>
+  </head>
+  <body data-theme="auto" class="notransition">
+    <Header />
+    <div class:list={["wrapper", wrapperClass]}>
+      <slot />
+    </div>
+    <Footer />
+    <script is:inline>
+      document.body.classList.remove("notransition");
+      document.getElementById("mode").addEventListener("click", function (e) {
+        e.preventDefault();
+        var stored = localStorage.getItem("theme");
+        var current = stored
+          ? stored
+          : window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        if (current === "dark") {
+          localStorage.setItem("theme", "light");
+          document.documentElement.classList.remove("dark");
+          document.documentElement.classList.add("light");
+        } else {
+          localStorage.setItem("theme", "dark");
+          document.documentElement.classList.add("dark");
+          document.documentElement.classList.remove("light");
+        }
+      });
+      document
+        .getElementById("menu-trigger")
+        .addEventListener("change", function () {
+          var wrapper = document.querySelector(".wrapper");
+          if (this.checked) {
+            wrapper.classList.add("blurry");
+          } else {
+            wrapper.classList.remove("blurry");
+          }
+        });
+    </script>
+  </body>
+</html>
